@@ -1,0 +1,21 @@
+<main-menu></main-menu>
+<div class="container">
+  <input placeholder="Search for an artist" name="query" type="search" ng-model="$ctrl.query" ng-change="$ctrl.callOnChange()"/>
+  <h4>&nbsp;</h4>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Artist Name </th>
+        <th>Genre       </th>
+        <th>Apple Music </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="result in $ctrl.results">
+        <td> {{result.artistName}}        </td>
+        <td> {{result.primaryGenreName}}  </td>
+        <td> <a class="btn btn-default btn-sm" ng-click="$ctrl.goToAppleMusic(result.artistLinkUrl)" class="clickable-header">Go To Page</a>     </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
