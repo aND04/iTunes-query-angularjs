@@ -2,5 +2,7 @@ angular.module('iTunesApp', [
   'ngRoute',
   'components.mainMenu',
   'core.artist',
-  'components.artistList'
+  'core.album',
+  'components.artistList',
+  'components.artistDetail'
 ]);

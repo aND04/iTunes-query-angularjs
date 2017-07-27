@@ -1,0 +1,53 @@
+<main-menu></main-menu>
+<div class="container">
+  <div class="card">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th><h1> {{ $ctrl.artist.artistName }} </h1></th>
+          <th class="cellRight">
+            Sort By:
+            <select ng-model="$ctrl.orderProp">
+              <option value="collectionName">Alphabetical</option>
+              <option value="-releaseDate">Newest</option>
+              <option value="releaseDate">Oldest</option>
+              <option value="-trackCount">Most Songs</option>
+              <option value="collectionPrice">Price</option>
+            </select>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="album in $ctrl.slicedAlbums | orderBy:$ctrl.orderProp">
+          <td class="media" colspan="2">
+            <div class="media-left">
+              <img class="media-object" ng-src="{{album.artworkUrl100}}">
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading"> {{album.collectionName}} </h4>
+              <ul class="list-group">
+                <li>{{ album.trackCount }} Songs &bull; {{ album.primaryGenreName }}</li>
+                <li>{{ album.releaseDate | date:'dd/MM/yyyy' }}</li>
+                <li><a href="" ng-click="$ctrl.goToiTunesAlbumPage(album.collectionViewUrl)">{{album.collectionName}}</a>  on iTunes &bull; {{ album.collectionPrice | currency }}</li>
+              </ul>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="text-center">
+      <!-- numPages not working -->
+      <ul uib-pagination total-items="$ctrl.totalItems" num-pages="$ctrl.numPages" ng-model="$ctrl.currentPage" ng-change="$ctrl.pageChanged()"></ul>
+    </div>
+  </div>
+
+
+  <!-- <ul ng-repeat="album in $ctrl.albums | limitTo:1">
+    <li>
+      <ul ng-repeat="(key, item) in album">
+        <li> {{key + ': ' + item}} </li>
+      </ul>
+    </li>
+  </ul> -->
+</div>

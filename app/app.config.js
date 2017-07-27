@@ -10,6 +10,9 @@ angular.module('iTunesApp').
         when('/artist', {
           template: '<artist-list></artist-list>'
         }).
+        when('/artist/:artistId', {
+          template: '<artist-detail></artist-detail>'
+        }).
         otherwise({redirectTo: '/artist'});
     }
   ]);

@@ -1,2 +1,40 @@
 /* app css stylesheet */
 body { padding-top: 70px; }
+
+.cellRight{
+  text-align:right;
+}
+
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+input[type=search] {
+    width: 200px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+/* When the input field gets focus, change its width to 100% */
+input[type=search]:focus {
+    width: 100%;
+}
+
+.nav-background {
+  background-color: grey;
+}
+
+.card {
+    /* Add shadows to create the "card" effect */
+    padding: 30px 50px 50px 50px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.container {
+    margin: 50px 100px 100px 100px;
+}
