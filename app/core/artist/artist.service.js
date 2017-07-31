@@ -5,7 +5,7 @@ angular.
         return $resource('https://itunes.apple.com/search?term=:query' + '&entity=musicArtist&limit=5', {}, {
           query: {
             method: 'GET',
-            isArray: true
+            isArray: false
           }
         });
       }
